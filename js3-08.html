@@ -1,0 +1,72 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript  search table
+  </title>
+<style>
+#ula {
+  background: green;
+}
+</style>
+<script>
+
+window.onload=function(){
+  //get the elements
+  var oTal = document.getElementById('tab1');
+  var oBtn = document.getElementById('btn1');
+
+  // click on the button to output the ordered elements
+  oBtn.onclick = function(){
+
+    var arr=[];//set an array to store the value
+    for(var i = 0; i < oTal.tBodies[0].rows.length; i++){
+     arr[i] = oTal.tBodies[0].rows[i];
+   }
+   //sort the elements in the array
+   arr.sort(function(tr1,tr2){
+     var n = parseInt(tr1.cells[0].innerHTML);
+     var m = parseInt(tr2.cells[0].innerHTML);
+     return n - m;
+   })
+   //output the ordered array elements to ulb
+   for(var j = 0; j < arr.length; j++)
+    oTal.tBodies[0].appendChild(arr[j]);
+  }
+};
+
+</script>
+</head>
+<body>
+  <input id="btn1" type="button" value="sort"/>
+  <table id="tab1" border='1' width='500'>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>aaa</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>bbb</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>ccc</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>ddd</td>
+      <td>17</td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

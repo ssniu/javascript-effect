@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript  movement
+  </title>
+<style>
+
+#div1{
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  background: gray;
+}
+
+</style>
+<script>
+//drag & drop, page is unscrollable
+window.onload=function(){
+  var oDiv = document.getElementById('div1');
+  //set the default value
+  var disX = 0;
+  var dixY = 0;
+
+  oDiv.onmousedown = function(ev){
+    var oEvent = ev || event;
+    //set the current x and y
+    disX=oEvent.clientX - oDiv.offsetLeft;
+    disY=oEvent.clientY - oDiv.offsetTop;
+    //document to make the div move with mouse
+    //otherwise when mouse out of the div, the div will stop moving
+    document.onmousemove = function(ev){
+        var oEvent = ev || event;
+        var l = oEvent.clientX - disX;
+        var t = oEvent.clientY - disY;
+        //not allow the div move out of the window
+        if(l < 0){
+          l = 0;
+        }else if(l > document.documentElement.clientWidth - oDiv.offsetWidth){
+          l = document.documentElement.clientWidth - oDiv.offsetWidth;
+        }
+
+        if(t < 0){
+          t = 0;
+        }else if( t > document.documentElement.clientHeight - oDiv.offsetHeight){
+          t = document.documentElement.clientHeight - oDiv.offsetHeight;
+        }
+        oDiv.style.left = l + 'px';
+        oDiv.style.top = t + 'px';
+    };
+    //move operation is done
+    document.onmouseup = function(){
+      document.onmousemove=null;
+      document.onmouseup = null;
+    };
+    return false; // disable browser's default operations
+  };
+};
+
+</script>
+</head>
+<body>
+
+<div id="div1" >
+
+</div>
+
+</html>

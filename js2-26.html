@@ -1,0 +1,39 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript digit clock
+  </title>
+<style>
+
+</style>
+<script>
+
+window.onload=function(){
+
+  var oUl = document.getElementById('ula');
+  var oTxt = document.getElementById('txt1');
+  var oBtn = document.getElementById('btn1');
+  var aLi=oUl.getElementsByTagName('li');
+//insert the latest as first
+  oBtn.onclick=function(){
+    var oLi=document.createElement('li');
+    oLi.innerHTML = oTxt.value;
+    //oUl.appendChild(oLi);
+    oUl.insertBefore(oLi,aLi[0]);
+  }
+};
+
+</script>
+</head>
+<body>
+
+  <input id='btn1'type='button' value='add'/>
+  <input id='txt1'type='text' value=''/>
+
+<ul id='ula'>
+</ul>
+
+</body>
+
+</html>

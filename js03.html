@@ -1,0 +1,39 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript demo 01
+  </title>
+  <style>
+  #div1 {
+    width: 200px;
+    height: 100px;
+    background: gray;
+    border: 1px solid #999;
+  }
+  </style>
+  <script>
+  function toGreen(){
+    var oDiv = document.getElementById('div1');
+    oDiv.style.height='150px';
+    oDiv.style.width= '150px';
+    oDiv.style.background='green';
+  }
+  function toRed(){
+    var oDiv = document.getElementById('div1');
+    oDiv.style.display='200px';
+    oDiv.style.width= '250px';
+    oDiv.style.background='red';
+  }
+  </script>
+</head>
+<body>
+
+  <div id="div1"
+  onmouseover="toGreen()"
+  onmouseout="toRed()">
+    Play hide and seek! haha!
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript digit clock
+  </title>
+<style>
+
+</style>
+<script>
+//delete each li by clicking on the delete button
+window.onload=function(){
+  var oTal = document.getElementById('tab1');
+  for(var i = 0; i <oTal.tBodies[0].rows.length; i++){
+    if(i % 2 ){
+      oTal.tBodies[0].rows[i].style.background='';
+    }else{
+      oTal.tBodies[0].rows[i].style.background='#ccc';
+    }
+  }
+};
+
+</script>
+</head>
+<body>
+<table id="tab1" border='1' width='500'>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Age</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>aaa</td>
+    <td>23</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>bbb</td>
+    <td>24</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>ccc</td>
+    <td>26</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>ddd</td>
+    <td>17</td>
+  </tr>
+</table>
+</body>
+
+</html>

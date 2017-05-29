@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript demo02-04
+  </title>
+<style>
+
+</style>
+  <script>
+  //calendar
+  var json={a:12,b:13,c:12};
+  var arr=[1,2,3,4,5];
+  arr.push(8);
+  arr.push();
+  arr.shift();//delete the first element
+  arr.unshift();//add the first element
+  arr.splice(2,2);//add element(start, number of element), delete 2 element from 2nd
+  arr.splice(1,2,5,2,5);
+  //delete 2 element from 1 then add 5,2,5
+  //concat -- connect two arrays
+  var arr1 = [11,22];
+  alert(arr.concat(arr1));
+  //join @ between all elements
+  alert(arr.join('@'));
+  //sort()--sort the array
+  var arr2 = [12,23,1,2,43,4];
+  alert(arr2.sort(function(n1,n2){
+    /*if(n1<n2)
+      return -1;
+    else if(n1 > n2)
+      return 1;
+    else
+      return 0;
+    */
+    return n1-n2;
+  }));
+  for(var i in arr){
+    alert(arr[i]);
+  }
+  //array better to use for loop
+  //json better to use for in
+  for(var i in json)
+  alert(json[i]);
+
+
+  </script>
+</head>
+<body>
+
+</body>
+
+</html>

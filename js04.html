@@ -1,0 +1,27 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript demo 04
+  </title>
+  <link id="singlepage" type="text/css" rel="stylesheet" href="css1.css"/>
+  <script>
+  function toSkin1(){
+    var oLink = document.getElementById('singlepage');
+    oLink.href='css1.css';
+  }
+
+  function toSkin2(){
+    var oLink = document.getElementById('singlepage');
+    oLink.href='css2.css';
+  }
+
+  </script>
+</head>
+<body>
+
+<input type="button" value="skin1" onclick="toSkin1()" />
+<input type="button" value="skin1" onclick="toSkin2()" />
+</body>
+
+</html>

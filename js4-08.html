@@ -1,0 +1,31 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript  movement
+  </title>
+<style>
+
+</style>
+<script src="ajax.js"></script>
+<script>
+window.onload = function(){
+  var oBtn = document.getElementById('btn1');
+
+  oBtn.onclick = function(){
+    ajax('tx.txt', function(str){
+      alert(eval(str));
+    }, function(){
+      alert('failed');
+    });
+  };
+};
+</script>
+</head>
+<body>
+
+<input id="btn1" type="button" value="text content" >
+
+</div>
+
+</html>

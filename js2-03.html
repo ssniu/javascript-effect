@@ -1,0 +1,37 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript demo 04
+  </title>
+<style>
+#div1 {
+  width: 100px;
+  height: 100px;
+  background: green;
+  border: 1px solid gray;
+}
+</style>
+  <script>
+  //style -- change innerHtml style value 
+  function setStyle(name, value){
+    var oDiv = document.getElementById('div1');
+    oDiv.style[name] = value; // this is the only special className
+    //use className instead of class
+  }
+  </script>
+</head>
+<body>
+
+<input type="button" value="green" onclick="setStyle('background','red')" />
+<input type="button" value="wider" onclick="setStyle('width','200px')" />
+<input type="button" value="taller" onclick="setStyle('height','300px')" />
+<!--<input type="button" value="yellow" onclick="setColor('yellow')" />
+<input type="button" value="red" onclick="setColor('red')" />
+-->
+
+<div id="div1">
+</div>
+</body>
+
+</html>

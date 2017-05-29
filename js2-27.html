@@ -1,0 +1,36 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript digit clock
+  </title>
+<style>
+
+</style>
+<script>
+//delete each li by clicking on the delete button
+window.onload=function(){
+
+  var oUl = document.getElementById('ula');
+  var oAl = document.getElementsByTagName('a');
+  for(var i = 0; i < oAl.length;i++){
+    oAl[i].onclick=function(){
+      oUl.removeChild(this.parentNode);//remove each node
+    }
+  }
+};
+
+</script>
+</head>
+<body>
+<ul id='ula'>
+  <li>first <a href="#">delete</a></li>
+  <li>second <a href="#">delete</a></li>
+  <li>third <a href="#">delete</a></li>
+  <li>fourth <a href="#">delete</a></li>
+  <li>fifth <a href="#">delete</a></li>
+</ul>
+
+</body>
+
+</html>

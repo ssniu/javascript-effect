@@ -1,0 +1,139 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript demo02-04
+  </title>
+<style>
+* {
+  padding: 0;
+  margin: 0;
+}
+li{
+  list-style: none;
+}
+body {
+  font-family: arial;
+  background: #f6f9fc;
+}
+.calendar{
+  width: 210px;
+  margin: 50px auto 0;
+  padding: 10px 10px 20px 20px;
+  background: #eae9e9;
+}
+
+.calendar ul{
+  width: 210px;
+  overflow: hidden;
+  padding-bottom: 10px;
+
+}
+.calendar li{
+  float: left;
+  width: 58px;
+  height: 54px;
+  margin: 10px 10px 0 0 ;
+  border: 1px solid #fff;
+  background: #424242;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+}
+.calendar li h2{
+  font-size: 20px;
+  padding-top: 5px;
+}
+.calendar li p{
+  font-size: 14px;
+}
+.calendar .active{
+  border: 1px solid #434343;
+  background: #fff;
+  color: #e84a7e;
+}
+.calendar .active h2{
+
+}
+.calendar .active p{
+  font-weight: bold;
+}
+.calendar .text {
+  width: 178px;
+  padding: 0 10px 10px;
+  border: 1px solid #fff;
+  padding-top: 10px;
+  background: #f1f1f1;
+  color: #555;
+}
+.calendar .text h2{
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.calendar .text p{
+  font-size: 12px;
+  line-height: 18px;
+}
+
+</style>
+  <script>
+  //calendar
+  window.onload = function (){
+
+    var act = [
+      'Jan winter',
+      'Feb too cold',
+      'March storm',
+      'April summer is on the way',
+      'May summer starts',
+      'June i love summer',
+      'July beach time',
+      'August vacation',
+      'Sep a littl bit chilly',
+      'Oct colder',
+      'Nov winter again',
+      'Dec holiday season'
+    ];
+
+    var oDiv = document.getElementById('tab');
+    var aLi = oDiv.getElementsByTagName('li');
+    var oTxt = oDiv.getElementsByTagName('div')[0];
+
+    for(var i = 0; i < aLi.length; i++){
+      aLi[i].index = i;
+      aLi[i].onmouseover = function(){
+        for(var i =0; i <aLi.length; i++){
+          aLi[i].className='';
+        }
+        this.className = 'active';
+        oTxt.innerHTML='<h2>' + (this.index + 1) +'</h2><p>' + act[this.index]+'</p>';
+      };
+    }
+
+  };
+  </script>
+</head>
+<body>
+<div id="tab" class="calendar">
+<ul>
+  <li class="active"><h2>1</h2><p> Jan</p></li>
+  <li><h2>2</h2><p> Feb</p></li>
+  <li><h2>3</h2><p> Mar</p></li>
+  <li><h2>4</h2><p> Apr</p></li>
+  <li><h2>5</h2><p> May</p></li>
+  <li><h2>6</h2><p> Jun</p></li>
+  <li><h2>7</h2><p> Jul</p></li>
+  <li><h2>8</h2><p> Aug</p></li>
+  <li><h2>9</h2><p> Sep</p></li>
+  <li><h2>10</h2><p> Oct</p></li>
+  <li><h2>11</h2><p> Nov</p></li>
+  <li><h2>12</h2><p> Dec</p></li>
+</ul>
+<div class="text">
+  <h2>Jan activity</h2>
+  <p>winter break</p>
+</div>
+</div>
+</body>
+
+</html>

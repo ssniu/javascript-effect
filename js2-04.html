@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript demo02-04 
+  </title>
+<style>
+#div1 {
+  width: 100px;
+  height: 100px;
+  background: green;
+  border: 1px solid gray;
+}
+</style>
+  <script>
+  window.onload(function (){
+    var oDiv = document.getElementById('div1');
+    var oBtn = document.getElementById('btn1');
+    oBtn.onclick = function (){
+      oDiv.style[width] = '200px';
+    }
+
+  })
+  </script>
+</head>
+<body>
+
+<input id= "btn1" type="button" value="green"  />
+
+<div id="div1">
+</div>
+</body>
+
+</html>

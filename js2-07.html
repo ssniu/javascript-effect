@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript demo02-04
+  </title>
+<style>
+#div1 div{
+  width: 100px;
+  height: 100px;
+  background: gray;
+  display: none;
+}
+#div1 .active{
+  background: yellow;
+}
+</style>
+  <script>
+  window.onload = function (){
+
+    var oDiv = document.getElementById('div1');
+    var oBtn = oDiv.getElementsByTagName('input');
+    var aDiv = oDiv.getElementsByTagName('div');
+
+    for(var i = 0; i <oBtn.length; i++){
+      oBtn[i].index = i;
+      oBtn[i].onclick=function (){
+        for(var j = 0; j < oBtn.length; j++){
+          oBtn[j].className = '';
+          aDiv[j].style.display='none';
+        }
+        //set the current object is active
+        this.className = 'active';
+        // set the current div shows block
+        aDiv[this.index].style.display='block';
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="div1">
+  <input  class= "active" type="button" value="btn1" />
+  <input  type="button" value="btn2"/>
+  <input  type="button" value="btn3"/>
+
+<div style='display:block;'> button 1 content</div>
+<div > button 2 content</div>
+<div > button 3 content</div>
+
+</div>
+</body>
+
+</html>

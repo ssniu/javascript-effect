@@ -1,0 +1,57 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript digit clock
+  </title>
+<style>
+body {
+  background: blue;
+  width: 300px;
+  height: 350px;
+  color: white;
+  font-size: 50px;
+}
+</style>
+  <script>
+  //Date methods: getFullYear(), getMonths()+1, getDate(), getDay()(return week-day);
+  //getSeconds, getHours method
+  function toStrings(n){
+
+    if(n < 10)
+      return '0' + n;
+    else
+      return '' + n;
+  }
+
+window.onload= function(){
+
+  var aImg=document.getElementsByTagName('img');
+
+ function tem(){
+     var date = new Date();
+     var str = toStrings(date.getHours()) +  toStrings(date.getMinutes()) +
+           toStrings(date.getSeconds());
+
+    for(var i = 0; i <aImg.length; i++){
+      //aImg[i].src='images/'+str[i]+'.png';
+      aImg[i].src='images/'+str.charAt(i)+'.png';//solve the ie does not show correct image bug
+   }
+ }
+  setInterval(tem,1000);
+  tem();//solve the bug: when refreshing the page, shows "00:00:00"
+} ;
+</script>
+</head>
+<body>
+<img src="images/0.png"/>
+<img src="images/0.png"/>
+:
+<img src="images/0.png"/>
+<img src="images/0.png"/>
+:
+<img src="images/0.png"/>
+<img src="images/0.png"/>
+</body>
+
+</html>

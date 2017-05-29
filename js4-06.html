@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript  movement
+  </title>
+<style>
+*{
+
+  list-style: none;
+}
+#div1{
+  width: 100px;
+
+  position: absolute;
+  background: gray;
+  border: 1px solid black;
+  display: none;
+}
+
+</style>
+<script>
+//right-click menu
+document.oncontextmenu = function(ev){
+  var oEvent = ev || event;
+  var oDiv = document.getElementById('div1');
+
+  oDiv.style.display='block';
+  oDiv.style.left = oEvent.clientX + 'px';
+  oDiv.style.top = oEvent.clientY + 'px';
+
+  return false;//disable the default menu of browser
+};
+
+document.onclick = function(){
+  var oDic = document.getElementById('div1');
+  oDiv.style.display='none';
+};
+</script>
+</head>
+<body>
+
+<div id="div1" >
+  <ul>
+    <li>move</li>
+    <li>edit</li>
+    <li>copy</li>
+    <li>delete</li>
+    <li>add</li>
+    <li>share</li>
+  </ul>
+</div>
+
+</html>

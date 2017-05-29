@@ -1,0 +1,79 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript digit clock
+  </title>
+<style>
+*{
+  margin: 0;
+  padding: 0;
+}
+#div1{
+  width: 800px;
+  height: 120px;
+  margin: 100px auto;
+  position: relative;
+  background: white;
+  overflow:hidden;//rollover happens in specify area
+}
+#div1 ul{
+  position: absolute;
+  left:0;
+  top: 0;
+}
+#div1 ul li{
+  float: left;
+  width: 200px;
+  height: 120px;
+  list-style: none;
+  padding: 0 15px;
+}
+</style>
+<script>
+window.onload=function(){
+  var oDiv = document.getElementById('div1');
+  var oUl = oDiv.getElementsByTagName('ul')[0];
+  var aLi = oUl.getElementsByTagName('li');
+
+  //make the image list duplicated
+  oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
+  oUl.style.width=aLi[0].offsetWidth * aLi.length+'px';
+
+  var move = function(){
+    if(oUl.offsetLeft<-oUl.offsetWidth/2){
+      oUl.style.left='0';
+    }
+    if(oUl.offsetLeft> 0){
+      oUl.style.left = -oUl.offsetWidth/2 + 'px';
+    }
+    //+2, rollover direction is right
+    oUl.style.left=oUl.offsetLeft+2+'px';//set the rolloverspeed
+  };
+  //set interval to make the rollover stop
+  var timer = setInterval(move, 30);
+
+  oDiv.onmouseover = function(){
+    clearInterval(timer);
+  }
+  oDiv.onmouseout = function(){
+    timer = setInterval(move, 30);
+  }
+
+};
+
+</script>
+</head>
+<body>
+
+<div id="div1">
+<ul>
+  <li><img src="images/11.jpeg"></img></li>
+  <li><img src="images/22.jpeg"></img></li>
+  <li><img src="images/33.jpeg"></img></li>
+  <li><img src="images/77.jpeg"></img></li>
+  </ul>
+</div>
+</body>
+
+</html>

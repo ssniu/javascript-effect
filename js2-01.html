@@ -1,0 +1,34 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript demo 04
+  </title>
+  <style>
+  #div1 {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background: gray;
+  }
+
+  </style>
+  <script>
+  function setColor(color){
+    var oDiv = document.getElementById('div1');
+    oDiv.style.background = color; // this is the only special className
+    //use className instead of class
+  }
+  </script>
+</head>
+<body>
+
+<input type="button" value="green" onclick="setColor('green')" />
+<input type="button" value="yellow" onclick="setColor('yellow')" />
+<input type="button" value="red" onclick="setColor('red')" />
+
+<div id="div1">
+</div>
+</body>
+
+</html>

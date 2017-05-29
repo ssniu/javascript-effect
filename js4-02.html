@@ -1,0 +1,62 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript  movement
+  </title>
+<style>
+#div1 {
+  height: 100px;
+  width: 80px;
+  background: blue;
+  opacity: 0.2;
+}
+</style>
+<script>
+
+window.onload=function(){
+  var oDiv = document.getElementById('div1');
+
+  oDiv.onmouseover = function(){
+    setTrans(100);
+  };
+  oDiv.onmouseout = function(){
+    setTrans(30);
+  };
+};
+
+var opa = 30;
+var timer = null;
+
+function setTrans(n){
+  var oDiv = document.getElementById('div1');
+
+  clearInterval(timer);
+  timer=setInterval(function(){
+    var speed = 0;
+    if(opa < n){
+      speed = 5;
+    }
+    else {
+      speed = -5;
+    }
+
+  if(opa == n){
+    clearInterval(timer);
+  }else {
+    opa += speed;
+    oDiv.style.opacity = opa / 100;
+  }
+}, 30);
+}
+
+
+</script>
+</head>
+<body>
+
+<div id="div1" >
+</div>
+</body>
+
+</html>

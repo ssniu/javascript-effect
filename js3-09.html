@@ -1,0 +1,73 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript  search table
+  </title>
+<style>
+
+</style>
+<script>
+window.onload=function(){
+  //get the elements
+  var oTal = document.getElementById('tab1');
+  var oTxt = document.getElementById('name');
+  var oBtn = document.getElementById('btn1');
+
+  // click on the button to output the ordered elements
+  oBtn.onclick = function(){
+    //search the name -- cells[1]
+    for(var i = 0; i < oTal.tBodies[0].rows.length; i++){
+     var sTal = oTal.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+     var sTxt = oTxt.value.toLowerCase();
+
+     //Split the search keywords
+     var arr = sTxt.split(' ');
+     oTal.tBodies[0].rows[i].style.background='';
+
+   //output the ordered array elements to ulb
+   for(var j = 0; j < arr.length; j++){
+     if(sTal.search(arr[j])!= -1){
+       oTal.tBodies[0].rows[i].style.background='yellow';
+     }
+   }
+ }
+ };
+};
+
+</script>
+</head>
+<body>
+  name: <input id="name" type="text"/>
+  <input id="btn1" type="button" value="search"/>
+  <table id="tab1" border='1' width='500'>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>aaa</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>bbb</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>ccc</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>ddd</td>
+      <td>17</td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

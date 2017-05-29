@@ -1,0 +1,59 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript  movement
+  </title>
+<style>
+div {
+  height: 100px;
+  width: 80px;
+  background: blue;
+  margin: 15px 0;
+}
+
+</style>
+<script>
+
+window.onload=function(){
+  var aDiv = document.getElementsByTagName('div');
+
+ for(var i = 0; i < aDiv.length; i++){
+   aDiv[i].timer = null; // set setInterval for each object
+
+  aDiv[i].onmouseover = function(){
+    getWider(this, 300);
+  };
+  aDiv[i].onmouseout = function(){
+    getWider(this, 80);
+  };
+}
+};
+
+// getWider function
+function getWider(obj, n){
+
+  clearInterval(obj.timer);
+  obj.timer=setInterval(function(){
+    var speed = (n - obj.offsetWidth) / 6;
+    speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+    if(obj.offsetWidth == n){
+      clearInterval(obj.timer);
+    }
+    else {
+      obj.style.width=obj.offsetWidth + speed + 'px';
+    }
+}, 30);
+}
+
+
+</script>
+</head>
+<body>
+<div ></div>
+<div ></div>
+<div ></div>
+</body>
+
+</html>

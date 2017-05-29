@@ -1,0 +1,54 @@
+<!Doctype html>
+<html>
+<head>
+  <title>
+    Javascript  search table
+  </title>
+<style>
+#ula {
+  background: green;
+}
+</style>
+<script>
+
+window.onload=function(){
+  //get the elements
+  var oUl = document.getElementById('ula');
+  var oUlb = document.getElementById('ulb');
+  var oBtn = document.getElementById('btn1');
+
+  // click on the button to output the ordered elements
+  oBtn.onclick = function(){
+    var oLi = oUl.getElementsByTagName('li');//get all li values
+    var arr=[];//set an array to store the value
+    for(var i = 0; i < oLi.length; i++){
+     arr[i] = oLi[i];
+   }
+   //sort the elements in the array
+   arr.sort(function(li1,li2){
+     var n = parseInt(li1.innerHTML);
+     var m = parseInt(li2.innerHTML);
+     return n - m;
+   })
+   //output the ordered array elements to ulb
+   for(var j = 0; j < arr.length; j++)
+    oUlb.appendChild(arr[j]);
+  }
+};
+
+</script>
+</head>
+<body>
+  <ul id="ula">
+    <li>24</li>
+    <li>32</li>
+    <li>5</li>
+    <li>20</li>
+    <li>88</li>
+  </ul>
+<input id ="btn1" type="button" value="move" />
+<ul id="ulb">
+</ul>
+</body>
+
+</html>
