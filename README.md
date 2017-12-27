@@ -1,1 +1,1 @@
-*** javascript code example 
+ javascript code example 
